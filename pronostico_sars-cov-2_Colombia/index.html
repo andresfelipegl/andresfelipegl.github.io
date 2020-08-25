@@ -1,59 +1,179 @@
-%%writefile index.html
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-
+   
     <!--- vínculo al arhcivo ---->
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!--------------------------->
 
     <title>Estructura semantica</title>
   </head>
+  
   <body>
+    <style>
+        
+        /* Style the header */
+        .header {
+          margin: 0;
+          background-color: #2c04fa;
+          padding: 8px;
+          text-align: right;
+        }
+        </style>
+    <div class="header"> <h10>Pronóstico de la evolución de casos activos de SARS-CoV-2 en Colombia</h10></div>
     <header>
-        Encabezamiento
+
+    </header>
+    <header>
+         </br>
+        
     </header>
     <section>
-        <h2>Titulo 1</h1>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh velit, gravida
-        sed diam a, consectetur cursus felis. Duis scelerisque congue efficitur. Duis nec lacus
-        id nulla tempus commodo. Curabitur ut tincidunt mauris. Vivamus tincidunt risus augue,
-        a egestas tellus sodales vitae. Fusce vitae felis eu tortor sodales gravida. </p>
-
-        <p>Nulla eget condimentum nulla. Fusce pretium ornare lectus eu bibendum. Donec eros mauris,
-        laoreet quis viverra id, lobortis vel dui.</p>
-
+        <h1></h1>
+        <h1>Introducción</h1>
+        
+        <p>Colombia no ha sido ajena a la crisis 
+            generada por la aparición del síndrome 
+            respiratorio agudo severo (COVID-19), enfermedad que ha llevado 
+            al limite a la sociedad debido a su impacto y a las medidas disruptivas, 
+            rigurosas y extremas que han tomado los gobiernos para controlar su 
+            transmisión, desde su reconocimiento como una pandemia 
+            mundial el 11 de marzo de 2020. Uno los principales elementos 
+            para la toma de decisiones ha sido el pronóstico y la modelación 
+            del total de casos diagnosticados, el total de casos activos, la 
+            cantidad de casos recuperados y las muertes esperadas, tanto en 
+            el corto como en el largo plazo. </p>
+        <div class="left">
+        <p>En la literatura más relevante, la evolución de casos 
+            en general ha sido abordada de dos formas diferentes: la primera es 
+            mediante el uso de modelos SIR y sus variaciones (Susceptible-Infectado-Recuperado), 
+            que son básicamente modelos de simulación basados en supuestos muy 
+            fuertes sobre la evolución de la enfermedad. La segunda aproximación corresponde 
+            al uso de metodologías de pronóstico de series de tiempo (tanto 
+            estadísticas como de inteligencia artificial) para pronosticar 
+            los nuevos casos activos o los casos confirmados; sin embargo, 
+            esta aproximación también supone 
+            fuertes hipótesis sobre como se comporta la enfermedad.</p>
+        </div>
     </section>
     <section>
-
-        <h2>Listas sin numeración</h2>
-
-        <ul>
-            <li>Uno</li>
-            <li>Dos</li>
-            <li>Tres</li>
-        </ul>
-
+        <style>
+        nav {
+            float: left;
+            width: 20%;
+            height: 60px;
+            background: #b32e2e;
+            padding: 20px;
+        }
+        </style>
+         
+        <h3>Situación actual de las principales ciudades del país</h3>
+        <nav style="border:1px solid #BEBDBD; border-width:2px; p.groove {border-style: groove;}">
+            <p class="seltext">Ciudad:</p>
+            <select id="region" name="region"  onchange="selectPlot()">
+      
+              <!--- Este codigo se elimina
+              <option value="N.Amer">N.Amer</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia">Asia</option>
+              <option value="S.Amer">S.Amer</option>
+              <option value="Oceania">Oceania</option>
+              <option value="Africa">Africa</option>
+              <option value="Mid.Amer">Mid.Amer</option>
+              --->
+      
+              <!--- Genera las opciones del menu usando Jinja2 --->
+      
+              
+                  <option value="Bogotá">Bogotá</option>
+              
+                  <option value="Medellín">Medellín</option>
+              
+                  <option value="Cali">Cali</option>
+              
+                  <option value="Barranquilla">Barranquilla</option>
+              
+                  <option value="Oceania">Oceania</option>
+              
+                  <option value="Africa">Africa</option>
+              
+                  <option value="Mid.Amer">Mid.Amer</option>
+              
+      
+              <!--- Fin de la modificacion --->
+      
+            </select>
+            <br>
+            <hr>
+            <p class="auxtext"> Data extraída de datos.gov.co </p>
+          </nav>
+        <div>
+            <p>Esta es la situación actual en Bogotá, Medellín Barranquilla, Cali y ...</p>
+            <br>
+            <div style="width: 50%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Republic%20of%20Colombia+(My%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="500" height="450" frameborder="0"></iframe></div>
+            <img src="Africa.jpg" />
+        </div>
+        
     </section>
-    <section>
-
-        <h2>Listas enumeradas</h2>
-
-        <ol>
-            <li>Uno</li>
-            <li>Dos</li>
-            <li>Tres</li>
-        </ol>
-
-    </section>
-
-    <footer>
-        Pie de página
-    </footer>
-
-
+  
   </body>
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: ##1e2130;
+  padding: 5px;
+}
+
+.grid-container > div {
+  background-color: #b8c9d6;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+</style>
+</head>
+<body>
+
+<h1>Grilla</h1>
+
+<p>Texto</p>
+
+<div class="grid-container">
+  <div class="item1">header</div>
+  <div class="item2">Menu</div>
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">Footer</div>
+</div>
+<footer>
+    <br>
+    © Proyecto de Analítica Predictiva realizado en el año 2020 por Milady Aguilera Cardona,
+    Manuela Cuartas Meneses, Esteban Escudero Puerta y Andrés Felipe González Lozano.
+
+    
+</footer>
+
+<div id='mapa'>MAPA</div> 
+
+<script src="script.js"></script>
+</body>
 </html>
